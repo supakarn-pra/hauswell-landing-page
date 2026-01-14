@@ -1,9 +1,15 @@
+import { Routes, Route } from "react-router-dom";
+import Index from "@/pages/Index";
+import NotFound from "@/pages/not-found";
+
 export function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="font-medium">Hello World</div>
-    </div>
-  )
+      <Routes>
+        <Route path="/" element={<Index />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+  );
 }
 
-export default App
+export default App;
